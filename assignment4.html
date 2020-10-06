@@ -5,13 +5,15 @@ table, th, td, tr {
   border: 1px solid black;
   border-collapse: collapse;
 }
+th, td {
+  padding: 10px;
+}
 body {
     background-color: rgb(244, 164, 96, 0.5);
 }
 </style>
 </head>
 <body>
-
 <h2>Comparison of Compression Algorithms</h2>
 <table style="width:100%">
   <tr>
@@ -21,8 +23,8 @@ body {
     <th>Original Size (KB)</th>
     <th>Compression Size (KB)</th>
     <th>Compression Ratio</th>
-    <th>Original Audio</th>
-    <th>Compressed Audio</th>
+    <th>Link to Original Audio</th>
+    <th>Link to Compressed Audio</th>
     <th>Residual Audio</th>
   </tr>
   <tr>
@@ -30,9 +32,9 @@ body {
     <td>MP3</td>
     <td>96</td>
     <td>27200</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>925</td>
+    <td>.03</td>
+    <td><a href="piano.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -41,9 +43,9 @@ body {
     <td>MP3</td>
     <td>128</td>
     <td>27200</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>1200</td>
+    <td>.04</td>
+    <td><a href="piano.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -52,9 +54,9 @@ body {
     <td>MP3</td>
     <td>192</td>
     <td>27200</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>1900</td>
+    <td>.07</td>
+    <td><a href="piano.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -63,53 +65,53 @@ body {
     <td>MP3</td>
     <td>320</td>
     <td>27200</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Piano</td>
-    <td>OGG</td>
-    <td>96</td>
-    <td>27200</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>3100</td>
+    <td>.11</td>
+    <td><a href="piano.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>Piano</td>
     <td>OGG</td>
-    <td>128</td>
+    <td>low quality</td>
     <td>27200</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>574</td>
+    <td>.02</td>
+    <td><a href="piano.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>Piano</td>
     <td>OGG</td>
-    <td>192</td>
+    <td>low-mid quality</td>
     <td>27200</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>757</td>
+    <td>.03</td>
+    <td><a href="piano.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>Piano</td>
     <td>OGG</td>
-    <td>320</td>
+    <td>mid-high quality</td>
     <td>27200</td>
+    <td>1010</td>
+    <td>.04</td>
+    <td><a href="piano.wav">Original Audio</a></td>
     <td></td>
     <td></td>
-    <td></td>
+  </tr>
+  <tr>
+    <td>Piano</td>
+    <td>OGG</td>
+    <td>high quality</td>
+    <td>27200</td>
+    <td>1900</td>
+    <td>.07</td>
+    <td><a href="piano.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -120,7 +122,7 @@ body {
     <td>27200</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><a href="piano.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -131,7 +133,7 @@ body {
     <td>27200</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><a href="piano.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -142,7 +144,7 @@ body {
     <td>27200</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><a href="piano.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -153,7 +155,7 @@ body {
     <td>27200</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><a href="piano.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -164,7 +166,7 @@ body {
     <td>27200</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><a href="piano.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -175,7 +177,7 @@ body {
     <td>27200</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><a href="piano.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -186,7 +188,7 @@ body {
     <td>27200</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><a href="piano.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -197,7 +199,7 @@ body {
     <td>27200</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><a href="piano.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -295,7 +297,7 @@ body {
     <td>96</td>
     <td>10100</td>
     <td>684</td>
-    <td>.068</td>
+    <td>.07</td>
     <td></td>
     <td></td>
     <td></td>
@@ -306,7 +308,7 @@ body {
     <td>128</td>
     <td>10100</td>
     <td>904</td>
-    <td>.090</td>
+    <td>.09</td>
     <td></td>
     <td></td>
     <td></td>
@@ -317,7 +319,7 @@ body {
     <td>192</td>
     <td>10100</td>
     <td>1300</td>
-    <td>.129</td>
+    <td>.13</td>
     <td></td>
     <td></td>
     <td></td>
@@ -328,7 +330,7 @@ body {
     <td>320</td>
     <td>10100</td>
     <td>1800</td>
-    <td>.178</td>
+    <td>.18</td>
     <td></td>
     <td></td>
     <td></td>
