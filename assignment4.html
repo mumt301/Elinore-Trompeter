@@ -1,5 +1,7 @@
 <html>
 <head>
+    <a href="index.html">Home</a>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 table, th, td, tr {
   border: 1px solid black;
@@ -10,6 +12,10 @@ th, td {
 }
 body {
     background-color: rgb(244, 164, 96, 0.5);
+}
+a {
+    color:rgb(230, 140, 23);
+    padding: 13px;
 }
 </style>
 </head>
@@ -25,18 +31,18 @@ body {
     <th>Compression Ratio</th>
     <th>Link to Original Audio</th>
     <th>Link to Compressed Audio</th>
-    <th>Residual Audio</th>
+    <th>Link to Residual Audio</th>
   </tr>
   <tr>
     <td>Piano</td>
     <td>MP3</td>
     <td>96</td>
     <td>27200</td>
-    <td>925</td>
+    <td>869</td>
     <td>.03</td>
     <td><a href="piano.wav">Original Audio</a></td>
-    <td></td>
-    <td></td>
+    <td><a href="piano96.mp3">Compressed Audio</a></td>
+    <td><a href="mp3pianoresidual96.wav">Residual Audio</a></td>
   </tr>
   <tr>
     <td>Piano</td>
@@ -46,74 +52,74 @@ body {
     <td>1200</td>
     <td>.04</td>
     <td><a href="piano.wav">Original Audio</a></td>
-    <td></td>
-    <td></td>
+    <td><a href="piano128.mp3">Compressed Audio</a></td>
+    <td><a href="mp3pianoresidual128.wav">Residual Audio</a></td>
   </tr>
   <tr>
     <td>Piano</td>
     <td>MP3</td>
     <td>192</td>
     <td>27200</td>
-    <td>1900</td>
-    <td>.07</td>
+    <td>1700</td>
+    <td>.06</td>
     <td><a href="piano.wav">Original Audio</a></td>
-    <td></td>
-    <td></td>
+    <td><a href="piano192.mp3">Compressed Audio</a></td>
+    <td><a href="mp3pianoresidual192.wav">Residual Audio</a></td>
   </tr>
   <tr>
     <td>Piano</td>
     <td>MP3</td>
     <td>320</td>
     <td>27200</td>
-    <td>3100</td>
-    <td>.11</td>
+    <td>2700</td>
+    <td>.10</td>
     <td><a href="piano.wav">Original Audio</a></td>
-    <td></td>
-    <td></td>
+    <td><a href="piano320.mp3">Compressed Audio</a></td>
+    <td><a href="mp3pianoresidual320.wav">Residual Audio</a></td>
   </tr>
   <tr>
     <td>Piano</td>
     <td>OGG</td>
     <td>low quality</td>
     <td>27200</td>
-    <td>574</td>
+    <td>476</td>
     <td>.02</td>
     <td><a href="piano.wav">Original Audio</a></td>
-    <td></td>
-    <td></td>
+    <td><a href="pianoL.ogg">Compressed Audio</a></td>
+    <td><a href="oggpianoLresidual.wav">Residual Audio</td>
   </tr>
   <tr>
     <td>Piano</td>
     <td>OGG</td>
     <td>low-mid quality</td>
     <td>27200</td>
-    <td>757</td>
+    <td>760</td>
     <td>.03</td>
     <td><a href="piano.wav">Original Audio</a></td>
-    <td></td>
-    <td></td>
+    <td><a href="pianoLM.ogg">Compressed Audio</a></td>
+    <td><a href="oggpianoLMresidual.wav">Residual Audio</a></td>
   </tr>
   <tr>
     <td>Piano</td>
     <td>OGG</td>
     <td>mid-high quality</td>
     <td>27200</td>
-    <td>1010</td>
-    <td>.04</td>
+    <td>1300</td>
+    <td>.05</td>
     <td><a href="piano.wav">Original Audio</a></td>
-    <td></td>
-    <td></td>
+    <td><a href="pianoMH.ogg">Compressed Audio</a></td>
+    <td><a href="oggpianoMHresidual.wav">Residual Audio</a></td>
   </tr>
   <tr>
     <td>Piano</td>
     <td>OGG</td>
     <td>high quality</td>
     <td>27200</td>
-    <td>1900</td>
-    <td>.07</td>
+    <td>2700</td>
+    <td>.10</td>
     <td><a href="piano.wav">Original Audio</a></td>
-    <td></td>
-    <td></td>
+    <td><a href="pianoH.ogg">Compressed Audio</a></td>
+    <td><a href="oggpianoHresidual.wav">Residual Audio</a></td>
   </tr>
   <tr>
     <td>Piano</td>
@@ -210,29 +216,29 @@ body {
     <td>10100</td>
     <td></td>
     <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Ambient</td>
-    <td>MP3</td>
-    <td>128</td>
-    <td>10100</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><a href="ambient.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>Ambient</td>
     <td>MP3</td>
+    <td>128</td>
+    <td>10100</td>
+    <td></td>
+    <td></td>
+    <td><a href="ambient.wav">Original Audio</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Ambient</td>
+    <td>MP3</td>
     <td>192</td>
     <td>10100</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><a href="ambient.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -243,51 +249,51 @@ body {
     <td>10100</td>
     <td></td>
     <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Ambient</td>
-    <td>OGG</td>
-    <td>96</td>
-    <td>10100</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><a href="ambient.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>Ambient</td>
     <td>OGG</td>
-    <td>128</td>
+    <td>low quality</td>
     <td>10100</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><a href="ambient.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>Ambient</td>
     <td>OGG</td>
-    <td>192</td>
+    <td>low-mid quality</td>
     <td>10100</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><a href="ambient.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>Ambient</td>
     <td>OGG</td>
-    <td>320</td>
+    <td>mid-high quality</td>
     <td>10100</td>
     <td></td>
     <td></td>
+    <td><a href="ambient.wav">Original Audio</a></td>
     <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Ambient</td>
+    <td>OGG</td>
+    <td>high quality</td>
+    <td>10100</td>
+    <td></td>
+    <td></td>
+    <td><a href="ambient.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -296,9 +302,9 @@ body {
     <td>AAC</td>
     <td>96</td>
     <td>10100</td>
-    <td>684</td>
-    <td>.07</td>
     <td></td>
+    <td></td>
+    <td><a href="ambient.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -307,9 +313,9 @@ body {
     <td>AAC</td>
     <td>128</td>
     <td>10100</td>
-    <td>904</td>
-    <td>.09</td>
     <td></td>
+    <td></td>
+    <td><a href="ambient.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -318,9 +324,9 @@ body {
     <td>AAC</td>
     <td>192</td>
     <td>10100</td>
-    <td>1300</td>
-    <td>.13</td>
     <td></td>
+    <td></td>
+    <td><a href="ambient.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -329,9 +335,9 @@ body {
     <td>AAC</td>
     <td>320</td>
     <td>10100</td>
-    <td>1800</td>
-    <td>.18</td>
     <td></td>
+    <td></td>
+    <td><a href="ambient.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -342,7 +348,7 @@ body {
     <td>10100</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><a href="ambient.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -353,7 +359,7 @@ body {
     <td>10100</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><a href="ambient.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -364,7 +370,7 @@ body {
     <td>10100</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><a href="ambient.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
@@ -375,7 +381,7 @@ body {
     <td>10100</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><a href="ambient.wav">Original Audio</a></td>
     <td></td>
     <td></td>
   </tr>
