@@ -31,7 +31,6 @@
         </div>
         <script type="text/JavaScript">
             function queryArtist() {
-
                 let params = (new URL(document.location)).searchParams;
                 if (params.has('artist')) {
                     let artistName = params.get('artist');
@@ -68,6 +67,17 @@
                     console.log(queryURL);
                     httpGet(queryURL, getAlbums)
             }
+            function getAlbums(xhttp) {
+                    let retrievedData = xhttp.responseXML;
+                    console.log(retrievedData);
+                    var albums = [];
+                    let all=retrievedData.getElementsByTagName('release-group');
+                    for (var i = all.length - 1; i >=0; i--) {
+                    let type=all[i].getAttribute('type');
+                    console.log(type);
+                        if(type=='Album') {
+                        albums.push(all[i]);
+                     }
             
             function httpGet(theURL, cbFunction) {
                 // Step 4: Make the HTTP request call to MusicBrainz
