@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-
     <head>
+        <a href="index.html">Home</a>
         <title>Assignment 6</title>
         <h1>Assignment 6</h1>
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
@@ -18,20 +18,15 @@
             }
         </style>
     </head>
-
     <body>            
         <div>
             <h2>MusicBrainz API Call</h2>
             <p>Retrieve an artist's discography by entering their name below!</p>
-            
-            <!-- Step 1: create the form -->
             <form id="artist" method="GET">
-                <label for="name">Artist name?</label>
+                <label for="name">Artist name</label>
                 <input type="text" name="artist" id="name">
-                <input type="submit" value="Get MBID!">
+                <input type="submit" value="Get info">
             </form>
-
-            <!-- Placeholder for step 6 - Render the data in the browser -->
             <p id="placeholder"></p>
         </div>
 
