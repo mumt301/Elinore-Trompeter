@@ -31,33 +31,38 @@
         </div>
         <script type="text/JavaScript">
             function queryArtist() {
-                // Step 2: Parse the data submitted through the form 
-                // In other words, get the parameters from the URL (@name = 'artist')
+
                 let params = (new URL(document.location)).searchParams;
                 if (params.has('artist')) {
                     let artistName = params.get('artist');
                     console.log(artistName);
 
-                    // Step 3: Craft the MusicBrainz call/message for requesting information about the artist
-                    // GET request --> type 'search'
                     let mbBaseURL = "https://musicbrainz.org/ws/2/";
                     let mbResource = "artist?query=";
                     let queryURL = mbBaseURL + mbResource + artistName;
                     console.log(queryURL);
-                    // Step 4–6
-                    httpGet(queryURL, getMBID);
-                    // Step 4: Make the HTTP request call to MusicBrainz and wait for its response
-                    // When the response is ready, it will use the callback function getMBID().
-                    // getMBID() will perform steps 5 and 6, parsing the response of the server
-                    // and rendering the results in the browser.
-                }
-            }
 
-            /*
-                Auxiliary functions
-                - httpGet, function for executing the XMLHttpRequest object
-                - callback functions (for each AJAX task)
-            */
+                    httpGet(queryURL, getMBID);
+                }
+            function queryAlbums(ambid) {
+                    let mbBaseURL = "https://musicbrainz.org/ws/2/";
+                    let mbBrowse = "release-group?artist=";
+                    let limit = "&limit=200";
+                    let Browse = mbBaseURL + mbBrowse + ambid + limit;
+                    httpGet(Browse, getAlbum);
+                }
+            function httpGet(theURL, cbFunction) {
+
+                    let xmlHttp = new XMLHttpRequest();
+
+                    xmlHttp.open("GET", theURL);
+                    xmlHttp.send();
+
+                    xmlHttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            cbFunction(this); 
+                        }
+            
             function httpGet(theURL, cbFunction) {
                 // Step 4: Make the HTTP request call to MusicBrainz
                 
