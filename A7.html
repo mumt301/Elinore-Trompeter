@@ -21,7 +21,7 @@
         <h1>Enter a song title and its artist for music recommendations!</h1>
 
         <!-- Step 2:-->
-        <form>
+        <form method="GET">
             <label for="songTitle">Song Title:</label>
             <input type="text" name="songTitle" id="songTitle">
             <br>
@@ -32,55 +32,39 @@
         </form>
         <div id="placeholder"></div>
         <script type="text/JavaScript">
-        	
-        	const apiKey = "36e201c8ac66339dd4a7432bcacebf34";
-        	// This variable has been defined globally rather than within a function, since more than one function uses it
-
             function queryArtist() {
             	// Step 3: 
                 let params = (new URL(document.location)).searchParams;
-                if (params.has('artistName')) && params.has('songTitle')) {
-                    let artistName = params.get('artistName');
-                    console.log(artistName);
-                    let songTitle = params.get(songTitle);
-                    console.log(songTitle);
+                    if (params.has('artistName') && params.has('songTitle')) {
+                let artistName = params.get('artistName');
+                console.log(artistName);
+                let songTitle = params.get('songTitle');
+                console.log(songTitle);
 
-                    // Step 4: 
-                    let queryURL = "https://ws.audioscrobbler.com/2.0/" + "?method=artist.getInfo&artist=" + artistName + "&api_key=" + apiKey;
-                    console.log(queryURL);
+                // Step 4: 
+                const apiKey = "36e201c8ac66339dd4a7432bcacebf34";
+                let queryURL = "https://ws.audioscrobbler.com/2.0" + "?method=" + "track.getSimilar" 
+                + "&artist=" + artistName + "&track=" + songTitle + "&api_key=" + apiKey;
+                console.log(queryURL);
 
-                    // Step 5: 
-                    httpGet(queryURL, getSimilar);
+                // Step 5: 
+                httpGet(queryURL, getSimilar);
                 }
             }
-
-            // Step 5:
-            function httpGet(theURL, cbFunction) {
+                httpGet(theURL, cbFunction) {
                 let xmlHttp = new XMLHttpRequest();
                 // Specify the request method and URL, and send the request to the server
                 xmlHttp.open("GET", theURL);
                 xmlHttp.send();
-                xmlHttp.onreadystatechange = function (){
+                xmlHttp.onreadystatechange = function () {
                     if(this.readyState == 4 && this.status == 200) {
-                        cbFunction(this); }
-                    };
-                }
-
-                // Wait for the response to be ready
-                xmlHttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        // when the response is ready, call the callback function
-                        // to parse the response and render the coresponding results
                         cbFunction(this); 
                     }
-                };
-            }
-
+                }
+                }
             // Step 6: Parse the results in the callback function
-            function getBioAndImage(xhttp) {
-
-                // Get the response and store it in a variable
-                let retrievedData = xhttp.responseXML;
+                function getSimilar (xhttp) {
+                let retrievedData = xhttp.reponseXML;
                 console.log(retrievedData);
 
                 // Parse the response
@@ -91,9 +75,14 @@
                 console.log(bioContent);
 
                 // Step 7: Display the results 
-                // (add a placeholder element in the HTML code and append the results to the DOM)
+                let placeholder = document.getElementbyID('placeholder')
                 let infobox = document.getElementById("bioContainer");
                 let bio = document.createElement("p");
+                for(i=0; i<5; i++){
+                let artistName = retrievedData.getElementsByTagName('name') [0].innerHTML;
+                let songTitle = retrievedData.getElementsByTagName('track') [0].innerHTML;
+                }
+                }
                 bio.innerHTML = bioContent;
                 infobox.appendChild(bio);
 
