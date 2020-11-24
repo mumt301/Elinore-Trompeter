@@ -51,7 +51,7 @@
                 httpGet(queryURL, getSimilar);
                 }
             }
-                httpGet(theURL, cbFunction) {
+                function httpGet(theURL, cbFunction) {
                 let xmlHttp = new XMLHttpRequest();
                 // Specify the request method and URL, and send the request to the server
                 xmlHttp.open("GET", theURL);
@@ -67,6 +67,12 @@
                 let retrievedData = xhttp.reponseXML;
                 console.log(retrievedData);
 
+                    for(i=0; i<5; i++){
+                let artistName = retrievedData.getElementsByTagName('name') [0].innerHTML;
+                let songTitle = retrievedData.getElementsByTagName('track') [0].innerHTML;
+                }
+                
+
                 // Parse the response
                 let artistMBID = retrievedData.getElementsByTagName("mbid")[0].innerHTML;
                 console.log(artistMBID); // We will use the MBID to retrieve an image from the artist
@@ -78,11 +84,6 @@
                 let placeholder = document.getElementbyID('placeholder')
                 let infobox = document.getElementById("bioContainer");
                 let bio = document.createElement("p");
-                for(i=0; i<5; i++){
-                let artistName = retrievedData.getElementsByTagName('name') [0].innerHTML;
-                let songTitle = retrievedData.getElementsByTagName('track') [0].innerHTML;
-                }
-                }
                 bio.innerHTML = bioContent;
                 infobox.appendChild(bio);
 
