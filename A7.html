@@ -67,27 +67,62 @@
                 let retrievedData = xhttp.responseXML;
                 console.log(retrievedData);
                 let tracks = retrievedData.getElementsByTagName('track');
+                let recSongNames = []
+                let recSongArtists = []
+                let recSongPlaycounts= []
+                let recSongMatches = []
+                let recSongImages = []
                     for(i=0; i<5; i++){
                 let currentTrack = tracks [i]
                 let recTrack = currentTrack.getElementsByTagName('name') [0].innerHTML;
                 let recNumbers = currentTrack.getElementsByTagName('playcount') [0].innerHTML;
                 let recMatch = currentTrack.getElementsByTagName('match') [0].innerHTML;
-                }
+                let recArtist = currentTrack.getElementsByTagName('name') [1].innerHTML;
+                let recImage = currentTrack.getElementsByTagName('image')[3].innerHTML
+                recSongNames.push(recTrack)
+                recSongArtists.push(recArtist)
+                recSongPlaycounts.push(recNumbers)
+                recSongMatches.push(recMatch)
+                recSongImages.push(recImage)
+            }
                 
+                // // Parse the response
+                // let artistMBID = retrievedData.getElementsByTagName("mbid")[0].innerHTML;
+                // console.log(artistMBID); // We will use the MBID to retrieve an image from the artist
 
-                // Parse the response
-                let artistMBID = retrievedData.getElementsByTagName("mbid")[0].innerHTML;
-                console.log(artistMBID); // We will use the MBID to retrieve an image from the artist
-
-                let bioContent = retrievedData.getElementsByTagName("content")[0].innerHTML;
-                console.log(bioContent);
+                // let bioContent = retrievedData.getElementsByTagName("content")[0].innerHTML;
+                // console.log(bioContent);
 
                 // Step 7: Display the results 
-                let placeholder = document.getElementbyID('placeholder')
-                let infobox = document.getElementById("bioContainer");
-                let bio = document.createElement("p");
-                bio.innerHTML = bioContent;
-                infobox.appendChild(bio);
+                let placeholder = document.getElementById('placeholder');
+                let recSongsDiv = document.createElement('div');
+
+                for(var i = 0; i < 5; i++){
+                let songName = recSongNames[i];
+                let songArtist = recSongArtists[i];
+                let songPlaycount = recSongPlaycounts[i];
+                let songMatch = recSongMatches[i];
+
+                let songImage = recSongImages[i]
+
+                let songNameHtml = document.createElement('p');
+                let songArtistHtml = document.createElement('p');
+                let songPlaycountHtml = document.createElement('p');
+                let songMatchHtml = document.createElement('p');
+                let songImageHtml = document.createElement('img')
+
+                songNameHtml.innerHTML = "Name: " + songName;
+                songArtistHtml.innerHTML = "By: " + songArtist;
+                songPlaycountHtml.innerHTML = "Playcount: " + songPlaycount;
+                songMatchHtml.innerHTML = "Song Match: " + songMatch;
+                songImageHtml.setAttribute('src', songImage)
+
+                recSongsDiv.appendChild(songNameHtml);
+                recSongsDiv.appendChild(songArtistHtml);
+                recSongsDiv.appendChild(songMatchHtml);
+                recSongsDiv.appendChild(songPlaycountHtml);
+                }
+                placeholder.appendChild(recSongsDiv)
 
                 // Make a query for the image:
                 // (Step 4 - for the image)
