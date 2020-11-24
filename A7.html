@@ -66,10 +66,12 @@
                 function getSimilar (xhttp) {
                 let retrievedData = xhttp.responseXML;
                 console.log(retrievedData);
-
+                let tracks = retrievedData.getElementsByTagName('track');
                     for(i=0; i<5; i++){
-                let artistName = retrievedData.getElementsByTagName('name') [0].innerHTML;
-                let songTitle = retrievedData.getElementsByTagName('track') [0].innerHTML;
+                let currentTrack = tracks [i]
+                let recTrack = currentTrack.getElementsByTagName('name') [0].innerHTML;
+                let recNumbers = currentTrack.getElementsByTagName('playcount') [0].innerHTML;
+                let recMatch = currentTrack.getElementsByTagName('match') [0].innerHTML;
                 }
                 
 
